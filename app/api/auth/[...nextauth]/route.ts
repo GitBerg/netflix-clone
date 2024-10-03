@@ -1,12 +1,24 @@
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
-
 import { compare } from "bcrypt"
+
+import GithubProvider from "next-auth/providers/github"
+import GoogleProvider from "next-auth/providers/google"
+
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
 
 import prismadb from '@/lib/prismadb'
 
-const handler =  NextAuth({
+const handler = NextAuth({
     providers: [
+        GithubProvider({
+            clientId: process.env.GITHUB_ID as string ,
+            clientSecret: process.env.GITHUB_SECRET as string
+        }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID || "",
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET || ""
+        }),
         Credentials({
             id: "credentials",
             name: 'Credentials',
@@ -50,9 +62,10 @@ const handler =  NextAuth({
     ],
 
     pages: {
-        signIn: "/auth"
+        signIn: "/auth",
     },
     debug: process.env.NODE_ENV === "development",
+    adapter: PrismaAdapter(prismadb),
     session: {
         strategy: "jwt",
     },
