@@ -1,9 +1,22 @@
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import Billboard from "@/components/Billboard";
 
-export default function Home() {
+export default async function Home() {
+  
+  const session = await auth()
+
+  if(!session) {
+    redirect('/auth')
+  }
+
+
   return (
     <>
-      <h1 className="text-2xl text-green-500">Netflix Clone</h1>
+      <Navbar />
+      <Billboard />
     </>
-  )
+    )  
 }
 

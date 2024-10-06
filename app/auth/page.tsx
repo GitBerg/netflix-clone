@@ -3,8 +3,9 @@
 import Input from "@/components/Input"
 import { useCallback, useState } from "react"
 import axios from "axios";
-import { signIn } from "next-auth/react";
-import { useRouter } from 'next/navigation';
+import { signIn } from "next-auth/react"
+
+import { useRouter } from "next/navigation";
 
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
@@ -24,20 +25,22 @@ export const Auth = () => {
 
     const login = useCallback(async () => {
         try {
-            const response = await signIn('credentials', {
+            const data = await signIn('credentials', {
                 email,
                 password,
                 redirect: false,
-                callbackUrl: "/",
+                redirectTo: '/'
             })
-            if(response?.ok){
-                router.push('/');
+
+            if(data?.error) {
+                return router.push('/')
             }
+             router.push('/profiles')
 
         } catch (error) {
             throw new Error('Invalid credentials')
         }
-    }, [email, password, router]);
+    }, [email, password]);
 
     const register = useCallback(async () => {
         try {
@@ -95,12 +98,12 @@ export const Auth = () => {
                         </button>
                         <div className="flex flex-row items-center gap-4 mt-8 justify-center">
                             <div 
-                                onClick={() => signIn('google', { callbackUrl: '/' })} 
+                                onClick={() => signIn('google', { redirectTo: '/profiles'} )} 
                                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
                                 <FcGoogle size={30}/>
                             </div>
                             <div 
-                                onClick={() => signIn('github', { callbackUrl: '/' })} 
+                                onClick={() => signIn('github', { redirectTo: '/profiles'})} 
                                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
                                 <FaGithub size={30}/>
                             </div>  
