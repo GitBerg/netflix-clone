@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Billboard from "@/components/Billboard";
 import MovieList from "@/components/MovieList";
 import FavoriteList from "@/components/FavoriteList";
+import InfoModal from "@/components/InfoModal";
+import useInfoModal from "@/hooks/useInfoModal";
 
 export default async function Home() {
   
@@ -15,6 +17,7 @@ export default async function Home() {
 
   return (
     <>
+      <InfoModal/>
       <Navbar />
       <Billboard />
       <div className="pb-40">
