@@ -6,6 +6,7 @@ import MobileMenu from "./MobileMenu"
 
 import { BsChevronDown, BsSearch, BsBell } from "react-icons/bs"
 import AccountMenu from "./AccountMenu"
+import Image from "next/image"
 
 const TOP_OFFSET = 66;
 
@@ -52,7 +53,7 @@ const Navbar = () => {
                 duration-500
                 ${showBackgroung ? 'bg-zinc-900 bg-opacity-90' : ''}
             `}>
-                <img src="/images/logo.png" alt="logo" className="h-4 lg:h-7" />
+                <Image height={500} width={120} src="/images/logo.png" alt="logo" className="h-4 lg:h-7" />
                 <div className="
                     flex-row
                     ml-8
@@ -81,7 +82,7 @@ const Navbar = () => {
                     </div>
                     <div onClick={toogleAccountMenu} className="flex flex-row items-center gap-2 cursor-pointer relative">
                         <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
-                            <img src="/images/default-blue.png" alt="profile" />
+                            <Image height={0} width={0} src="/images/default-blue.png" alt="profile" />
                         </div>
                         <BsChevronDown className={`text-white transition ${showAccountMenu ? 'rotate-180' : 'rotate-0' }`}/>
                         <AccountMenu visible={showAccountMenu}/>

@@ -8,6 +8,8 @@ import useMovie from "@/hooks/useMovie";
 import FavoriteButton from "./FavoriteButton";
 import useInfoModal from "@/hooks/useInfoModal";
 
+import Image from "next/image";
+
 
 
 const InfoModal = () => {
@@ -39,7 +41,7 @@ const InfoModal = () => {
             <div className="relative w-auto mx-auto max-w-3xl rounded-md overflw-hidden">
                 <div className={`${isVisible ? "scale-100" : "scale-0"} transfom duration-300 relative flex-auto bg-zinc-900 drop-shadow-md`}>
                     <div className="relative h-96">
-                        <img src={data?.thumbnailUrl} className="w-full h-full brightness-[60%] object-cover"/>
+                        <Image height={640} width={900} src={data?.thumbnailUrl} className="w-full h-full brightness-[60%] object-cover" alt="Thumbnail"/>
                         <div className="cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full bg-black bg-opacity-70 flex items-center justify-center" onClick={handleClose}>
                             <AiOutlineClose size={20} className="text-white"/>
                         </div>
