@@ -11,7 +11,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 import Image from "next/image";
 
-export const Auth = () => {
+export const Authentication = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -122,4 +122,4 @@ export const Auth = () => {
     )
 }
 
-export default Auth
+export default Authentication

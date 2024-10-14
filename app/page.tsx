@@ -5,7 +5,7 @@ import Billboard from "@/components/Billboard";
 import MovieList from "@/components/MovieList";
 import FavoriteList from "@/components/FavoriteList";
 import InfoModal from "@/components/InfoModal";
-import useInfoModal from "@/hooks/useInfoModal";
+
 
 export default async function Home() {
   
