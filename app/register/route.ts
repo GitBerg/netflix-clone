@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt'
 import prismadb from '@/lib/prismadb'
 
 
-export default async function POST(request: Request) {
+export async function POST(request: Request) {
     try {
         const data = await request.json()
         const { name, email, password } = data
