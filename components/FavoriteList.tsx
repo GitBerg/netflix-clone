@@ -23,7 +23,7 @@ const FavoriteList: React.FC<FavoriteListProps> = ({title}) => {
                 <p className="text-white text-md md:text-xl lg:text-2xl font-semibold mb-4">
                     {title}
                 </p>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
                     {favorites.map((movie:Movie) => (
                         <MovieCard key={movie.id} data={movie} />
                     ))}

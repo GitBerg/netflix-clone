@@ -53,7 +53,7 @@ const Navbar = () => {
                 duration-500
                 ${showBackgroung ? 'bg-zinc-900 bg-opacity-90' : ''}
             `}>
-                <Image height={500} width={120} src="/images/logo.png" alt="logo" className="h-4 lg:h-7" />
+                <Image height={500} width={120} src="/images/logo.png" alt="logo" className="h-4 w-24 sm:w-28 lg:h-7" />
                 <div className="
                     flex-row
                     ml-8
