@@ -2,6 +2,8 @@ import prismadb  from '@/lib/prismadb';
 import { without } from "lodash"
 import serverAuth from '@/lib/serverAuth';
 
+export const dynamic = 'force-dynamic'
+
 
 export async function POST(req:Request){
 

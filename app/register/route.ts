@@ -1,6 +1,8 @@
 import bcrypt from 'bcrypt'
 import prismadb from '@/lib/prismadb'
 
+export const dynamic = 'force-dynamic'
+
 
 export async function POST(request: Request) {
     try {
