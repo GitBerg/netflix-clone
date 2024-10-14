@@ -62,7 +62,7 @@ const Auth = () => {
         <div className="relative  h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover overflow-hidden">
             <div className="bg-black w-full h-full sm:bg-opacity-50">
                 <nav className="px-12 py-5 min-w-[350px]">
-                    <Image src="/images/logo.png" alt="logo" className="h-12" width={500} height={500} />
+                    <Image src="/images/logo.png" alt="logo" className="h-12" width={220} height={500} />
                 </nav>
                 <div className="flex justify-center min-w-[220px]">
                     <div className="w-full bg-black bg-opacity-70 px-4 py-16 self-center mt-2 sm:w-[450px] sm:px-16 lg:max-w-md rounded-md">
