@@ -39,7 +39,7 @@ const InfoModal = () => {
             <div className="relative w-auto mx-auto max-w-3xl rounded-md overflw-hidden">
                 <div className={`${isVisible ? "scale-100" : "scale-0"} transfom duration-300 relative flex-auto bg-zinc-900 drop-shadow-md`}>
                     <div className="relative h-96">
-                        <video src={data?.videoUrl} autoPlay muted loop poster={data?.thumbnailUrl} className="w-full h-full brightness-[60%] object-cover"/>
+                        <img src={data?.thumbnailUrl} className="w-full h-full brightness-[60%] object-cover"/>
                         <div className="cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full bg-black bg-opacity-70 flex items-center justify-center" onClick={handleClose}>
                             <AiOutlineClose size={20} className="text-white"/>
                         </div>
